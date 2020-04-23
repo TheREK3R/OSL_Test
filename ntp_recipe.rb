@@ -1,7 +1,7 @@
-apt-update
+apt_update
 
-'package ntp'
+package 'ntp'
 
-service 'ntpd' do
+service 'ntp' do
   action [:enable, :start]
 end
