@@ -8,7 +8,7 @@ awk '
 					max = arr[i]
 				}
 			}
-
+			
 			while(length(arr)){
 				min = max
 				for(i in arr){
@@ -24,6 +24,7 @@ awk '
 	}		
 	
 	{
+		count += 1
 		if(!arr[$1]){
 			arr[$1] = 0
 		}
@@ -32,7 +33,7 @@ awk '
 			arr[$1] += 1
 		}
 
-		indicies[$0] = $1
+		indicies[count] = $1
 	}
 	END{
 		print_sorted(arr, indicies)
